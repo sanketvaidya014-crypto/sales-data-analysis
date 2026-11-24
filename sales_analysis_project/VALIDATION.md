@@ -1,0 +1,1 @@
+Pipeline tested with temporary synthetic records: 3 input rows, 2 accepted, 1 invalid-date rejection, revenue 40. All ten SQL queries executed and Python/SQLite totals reconciled. These are test values, not real business findings.
