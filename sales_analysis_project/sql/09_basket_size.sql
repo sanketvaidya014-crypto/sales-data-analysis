@@ -1,1 +1,0 @@
-WITH b AS (SELECT order_id, SUM(quantity) units, SUM(revenue) revenue FROM sales GROUP BY order_id) SELECT units, COUNT(*) orders, ROUND(AVG(revenue),2) average_order_value FROM b GROUP BY units ORDER BY units;

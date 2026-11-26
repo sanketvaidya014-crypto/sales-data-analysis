@@ -1,1 +1,0 @@
-SELECT strftime('%w',order_date) weekday_sunday_zero, COUNT(DISTINCT order_id) orders, ROUND(SUM(revenue),2) revenue, ROUND(SUM(revenue)/NULLIF(COUNT(DISTINCT order_date),0),2) revenue_per_observed_date FROM sales GROUP BY 1 ORDER BY 1;

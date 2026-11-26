@@ -1,1 +1,0 @@
-SELECT COUNT(DISTINCT order_id) orders, COUNT(DISTINCT customer_id) identified_customers, SUM(quantity) units, ROUND(SUM(revenue),2) revenue, ROUND(SUM(revenue)/NULLIF(COUNT(DISTINCT order_id),0),2) average_order_value FROM sales;
