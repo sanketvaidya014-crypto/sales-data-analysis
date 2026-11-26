@@ -1,0 +1,1 @@
+WITH p AS (SELECT product, SUM(revenue) revenue FROM sales GROUP BY product) SELECT product, ROUND(revenue,2) revenue, ROUND(100.0*revenue/NULLIF(SUM(revenue) OVER (),0),2) share_pct, ROUND(100.0*SUM(revenue) OVER (ORDER BY revenue DESC, product ROWS UNBOUNDED PRECEDING)/NULLIF(SUM(revenue) OVER (),0),2) cumulative_share_pct FROM p ORDER BY revenue DESC, product;

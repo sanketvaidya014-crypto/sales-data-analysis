@@ -1,0 +1,1 @@
+WITH c AS (SELECT customer_id, COUNT(DISTINCT order_id) n FROM sales WHERE customer_id IS NOT NULL GROUP BY customer_id) SELECT COUNT(*) identified_customers, COALESCE(SUM(CASE WHEN n>1 THEN 1 ELSE 0 END),0) repeat_customers, ROUND(100.0*SUM(CASE WHEN n>1 THEN 1 ELSE 0 END)/NULLIF(COUNT(*),0),2) repeat_pct FROM c;

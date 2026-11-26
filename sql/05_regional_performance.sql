@@ -1,0 +1,1 @@
+SELECT region, COUNT(DISTINCT order_id) orders, ROUND(SUM(revenue),2) revenue, ROUND(SUM(revenue)/NULLIF(COUNT(DISTINCT order_id),0),2) average_order_value FROM sales GROUP BY region ORDER BY SUM(revenue) DESC;
